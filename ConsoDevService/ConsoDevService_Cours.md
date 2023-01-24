@@ -4,45 +4,37 @@
 
 Projet commun avec Marc Cheval
 "Grille notation"
-#### API
-#### API Gateway
 
+# API
+**Qu'est ce qu'une API :** Application Programming Interface, Exploiter des ressources distantes 
+> URI : Uniform Ressource Identifier (url + urn)  
+> Protocol Http : utilisé pour effectuer les requêtes à l'API
 
+Nous utilisons un API type Rest (Representationnal State Transfer) avec les conventions qui vont avec : 
+- **Stateless** : Pas de session : utilisation de Tokens
+- **Layered** : Permettre l'ajout d'intermédiaires (surcouche)
+- **Verbes** : actions sur les ressources 
+    - Get : Récupération
+    - Post : Création 
+    - Put : Mise à jour
+    - Delete : Suppresion
 
-## Partie 1 
-Qu'est ce qu'une API : Application Programming Interface, Exploiter des ressources distantes 
+Utilisation des codes de retours Internet : 
+- **100** : informations
+- **200** : succès
+- **300** : retours
+- **400** : erreurs coté client
+- **500** : erreurs serveurs 
 
-API Rest 
+*Richardson Matury Model* :  Définition des niveaux de qualité des API ( définit la note sur les TPs [ Niveau 2 et - à savoir ]) :
+- **Niveau 0** : RPC HTTP
+- **Niveau 1** : segmentation en ressource
+- **Niveau 2** : utilisation des verbes et des codes de retours : Savoir
+- **Niveau 3** : utilisation des controles hypermedia 
 
-URI : Uniform Ressource Identifier, url + urn 
-Protocol Http 
+## Pour les Tps : 
+- Rider de JetBrains ou Visual Studio (.net 6)
 
-Rest : Representationnal State Transfer
-Stateless : Pas de session : utilisation de token 
-pas d'affichage : client 
-Layered : intermédiaires non-visibles rendre possbile les surcouches 
-Verbes : 
-GET : récup 
-POST : Création
-PUT : Mise à jour
-DELETE : Supp
-
-Codes de retours : 
-100 informations
-200 succès
-300 retours
-400 erreurs coté client
-500 erreurs serveurs 
-
-Richardson Matury Model higher level better grade
-Niveau 0 : RPC HTTP
-Niveau 1 : segmentation en ressource
-Niveau 2 : utilisation des verbes et des codes de retours : Savoir
-Niveau 3 : utilisation des controles hypermedia 
-
-> utiliser rider de jetbrains : .net 6
-
-
-créer projet 
-API web asp.net core c#
-activer https, docker, controllers ,open api
+1. Créer le projet
+2. Selectionnier *API Web ASP.net core (C#)
+3. Activer https, docker, controllers et openAPI

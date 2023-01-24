@@ -36,8 +36,14 @@ On ajoute des clés étrangères là ou la cardinalité est à 1 maximum, on pre
 ### **B - Conversion des relations non-hiérarchiques**
 On convertit les relations en table avec les clés étrangères des 2 tables reliées et les attributs de la relation
 
-#### *Exemple :*
-""MLD""
+#### *Exemple :* MLD
+>VARIETE(numero, nom, categorie, exposition, distMinPlant, distMaxPlant, moisDebutFleur, moisFinFleur)  
+PRODUIT(codeBarre, conditionnement, nbUnites, prix, stock, #variete)  
+COMMANDE(noCommande, dateCommande, modeLivraison, #pointRelais, #client)  
+POINTRELAIS(id, nom, rue, codePostal, ville)  
+CLIENT(noClient, nom, prenom, rue, codePostal, ville, email)  
+CONTIENT(#codeBarre, #noCommande, nombre)  
+PROCHE(#variete, #varieteProche)  
 
 ---
 
