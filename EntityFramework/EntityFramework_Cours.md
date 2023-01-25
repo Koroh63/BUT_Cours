@@ -1,13 +1,13 @@
 # Entity Framework
 
-### Eval
+### Evaluation
 
 ##### Conception
 Plusieurs clients mobiles, web et desktop et le model est le même pour tous fonctionnant en local et pouvant consommer une BDD (partie Entity Framework). Sur un côté distant on veux aller cherhcher ses données via une web API qui consomme lui aussi une bdd (Conso de Service).
 
 Le client, la logique, le modèle et le stub sont fournis
 
-##### Objectif :
+### Objectif :
 - Construction et consommation de la BDD avec EF core
 - puis avec un client spécifique pour pouvoir dialoguer avec l'API
 - Rajouter un couche d'abstraction( Stratégie ) pour que les consommations soit interchangeables.
@@ -15,7 +15,7 @@ Le client, la logique, le modèle et le stub sont fournis
 - Déployer l'application
 - Rajouter de la qualité (tests)
 
-##### Exercice 
+### Exercice 
 
 10 points :
 - Ex 1: 1 BDD avec 1 table champion puis on l'utilise par le client avec des requêtes CRUD + du filtrage
@@ -33,21 +33,40 @@ Le client, la logique, le modèle et le stub sont fournis
     - part 2: relations (after 6)
 - Ex 8 : Rajouter le pattern Unit of work ( permet de faire un rollback )
 
-## Partie 1 :
+### Ressources 
 
-**EF core** : c'est un ORM (Object Relationnal Manager)
-créer bases, tables et fais la partie requêtes ()
+> Cours : https://codefirst.iut.uca.fr/documentation/mchSamples_.NET/docusaurus/mchsamples-.net-core/docs/category/entity-framework-core/  
+Exemples :
+> - Relations : 2.10
 
--Fonctionnement-
+# Fonctionnement
 
-Il va d'abord créer la base en utilisant une classe fille dérivée de DBContext et de la méthode onconfiguring():
-- Quel fournisseur vous choisissez (On ne choisit pas) : on lui passe juste le SGBD en param ( via nuget ) c'est EF qui fait la liaison(permet de faire la liaison ), mais impossible de faire des méthodes spécifique à un sgbd
+**EF core** : c'est un ORM (Object Relationnal Manager) : il créer les bases, les tables et s'occupe des requêtes.
 
-Onconfiguring s'occupe de créer la base 
+Il va d'abord créer la base de donnée en utilisant une classe fille dérivée de DBContext et va redéfinir la méthode OnConfiguration().
+> *On peut définir quel fournisseur (SGBD) on utilise (pas dans ce cours) dans la méthode. Cela permet d'utiliser les fonctionnalités spécifiques à un service.*
 
 
-La classe fille possède une collection sous forme de DBSet de 
-L'entité permet d'encapsuler des propriétés qui seront stockés dans des tables et est assez malin (donc automatismes) mais on peut rajouter des contraintes
 
-2e partie : client qui utilise db context pour faire des requetes et obtenir des collections d'entité grâce à link to entities( permet de faire des requetes sur des collections : nounours.where(n=> n.nbPoils>500).orderBy(n=>n.id), where , take, select, slect many, order by )
+### 1ère Partie : 
+**OnConfiguring** permet alors la création de la base : la classe fille possède une collection sous forme de **DBSet** de 
+L'entité permet d'encapsuler des propriétés qui seront stockés dans des tables avec de nombreux automatismes (id) mais on peut rajouter des contraintes manuellement
 
+### 2e partie : 
+Le client utilise **DbContext** pour faire des requetes et obtenir des collections d'entité grâce à **LinqToEntity** 
+> *LinqToEntity permet de faire des requetes sur des collections : where, take, select, selectMany, orderBy*  
+
+Par Exemple :
+
+        
+    nounours.where(n=> n.nbPoils>500).orderBy(n=>n.id);
+
+![Diagramme Général](img/Diagramme1.PNG)
+
+## ***Séparation du Model :*** 
+
+On ne dépend alors plus de EntityFramework et on peut donc polluer "MyEntity" avec des annotations.
+
+> **POCO** : **P**lain **O**ld **C**LR (**C**ommon **L**anguage **R**untime = .NET) **O**bject 
+
+> **ATTENTION** : Les classes implementant IDisposable ne sont pas managé par le garbage collector, il faut donc utiliser .dispose() pour libérer l'espace manuellement.  
