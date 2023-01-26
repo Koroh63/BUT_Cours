@@ -48,6 +48,6 @@ Dans une entreprise les différentes activités sont :
 - S(I)AD : Système (interactif) d'aide à la décision -> SMO
 - SID : SI pour dirigeant -> SIS
 
-Plus le systèmes est haut dans les domaines, plus les données extérieurs sont requises.
+Plus le système est haut dans les domaines, plus les données extérieurs sont requises.
 
-Un système intégré : un sytème qui communique de bout en bout de l'entreprise et également avec l'extérieur, il est composé de différents processus, processus accessibles à toute l'entreprise. 
+Un système intégré : un sytème qui communique de bout en bout de l'entreprise et également avec l'extérieur, il est composé de différents processus, processus accessibles à toute l'entreprise. --shéma--

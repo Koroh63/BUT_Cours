@@ -65,7 +65,7 @@ Les fichiers prennent forment en 3 parties :
 - Component : passé au mobile pour l’affichage , avant le return : liberté de faire ce qu’on veut  
 
 - Stylesheet : avec une seule méthode :        
-<>
+
         void .create(){  
             définition des styles à la CSS  
         }     

@@ -18,6 +18,7 @@ Création du projet : New Porject ➜ Kotlin ➜ Créer
 - Possibilité de faire des fonctions de **premier ordre** (hors-classe)
 - Déclaration et prototypes similaire à l'**UML**
 - Conventions de nomage : https://kotlinlang.org/docs/coding-conventions.html
+- Android donne pleins d'extensions pour écrire plus facilement du Kotlin pour android
 
 # Types
 
@@ -64,7 +65,7 @@ Il n'y a pas de type "void", mais le singleton Unit. Le type Nothing existe auss
 
 # Variables
 
-## 1. Types
+## **1. Types**
 - **val** : constante
 - **var** : variable
     - **const** : top level (#define)
@@ -78,7 +79,7 @@ Il n'y a pas de type "void", mais le singleton Unit. Le type Nothing existe auss
                 var++;
             }
 
-## 2. Opérateurs
+## 2. **Opérateurs**
 
 - == Compare 2 instance  
 - === Compare l'adresse des instances  
@@ -103,7 +104,7 @@ Cet opération est retenue pour les conditions suivantes :
 
 On peut utiliser as(unsafe) et as?(safe : évite l'exception) afin de caster un type
 
-## 3. Comparaisons
+## 3. **Comparaisons**
 
 > Le "if" reste inchangé et est comme en JAVA.
 
@@ -128,75 +129,76 @@ On peut utiliser as(unsafe) et as?(safe : évite l'exception) afin de caster un 
         }
         )
 
-## 4. Boucles
+## **4. Boucles**
 >"continue" "while" et "break" restent inchagés et sont comme en JAVA
 
 "for" retourne maintenant un iterator sur les classes possèdant hasNext() et Next()  
 "break" lui peut désormaais cibler la boucles à casser.
 
-## 5. Exceptions
+## **5. Exceptions**
 
 Identique au JAVA avec le "check Exception" en moins.
 
 # Fonctions 
-possibilité de top-level ( hors-classe)
+Les fonctions sont des élèments de premier rang, on peux donc mettre des fonctions dans des fonctions et celle-ci ont toutes un type.
+
+Possibilité de faire des fonctions top-level ( hors-classe )
 
     fun sum(a: Int, b: Int): Int {
         return a + b
     }
 
-si une seul instruction : 
+Une fonction de contenant qu'une seule instruction : 
 
     fun sum(a: Int, b: Int ) : Int = a+b
 
 ou
 
     fun sum(a: Int, b: Int ) = a+b
+  
 
-param avec val par défauts
-param nommés 
+On peut aussi définir les fonctions avec des valeurs par défault pour les paramètres et nommer les paramètres :
 
     fun Box.setMargins(left : Int, right : Int)
     myBox.setMargins(left = 10)
 
-vararg : nombre de paramètres variable 
+Ou aussi avoir un nombre de paramètre variable avec vararg : *param permet de lui faire passer des Array (spread operator)
 
     fun foo(vararg strings: String){...}
     foo ("bar")
     foo ("bar","baz")
 
-spread operator * 
+ 
 
-fonction dans fonctinos 
 
-Fonctions : éléments de premier rang => elles ont un type (param, type retour)
+Une fonction qui prend du A et du B et qui renvoi du C :
 
     (A,B) -> C
 
-fonction qui prend du A et du B et qui renvoi du C
+Une fonction qui ne prend rien et ne renvoie rien : 
 
     () -> Unit 
 
-prend rien et renvoi rien 
+Une fonction sur A qui prend du B et renvoie C :
 
     A.(B) -> C
-fonction sur A qui prend B et renvoi C
 
+Il est possible d'effectuer des fonctions d'extensions de classes existantes en dehors de celles-ci: 
+
+    String.reverse(Str) : Str
+
+Les Fonctions infix permettent d'appeler les fonctions comme des opérateurs :
+
+    String.open(rights: Acces) file                     //ouvre le file de facon classique
+    File f = "/home/koroh/test.txt" open Acces.read     //return le type file en lecture avec infix
+
+
+
+# Listes
 .map pour appliquer un truc à une liste 
 .foreach parcours 
 
+# Doc
 
-Fonctions d'extensions permet d'étendre des classes en dehors de celles String.reverse(Str) : Str
-
-Android donne pleins d'extensions pour écrire plus facilement du Kotlin pour android
-
-Fonctions infix : comme des opérateurs 
-
-    String.open(rights: Acces) file
-    File f = "/home/koroh/test.txt" open Acces.read /return le type file en lecture
-
-Doc
-
-Dokka 
-comme le javadoc
+On utilise Dokka qui est comme javadoc mais en mieux 
 
