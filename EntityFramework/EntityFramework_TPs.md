@@ -30,8 +30,13 @@ New Solution ➜ AppConsole ➜ Installation des NuGets
 ### **Program.cs :**
 
     using(var context = new ArtistsDbContext()){
-        context.Artists.Add(new ArtistEntity("Morgan","Lee",17-05-2001))
+        context.Artists.AddRange(new ArtistEntity(
+        {
+            "Morgan","Lee",17-05-2001)
+        }
+        )
     } //dispose
+    context.SaveChanges(); // pour enregistrer
 
 ## 3. Lancement 
 
@@ -39,7 +44,58 @@ Modifier CsProj pour ajouter Start working directory (exemple 041 004) sinon une
 
 En console 
 
-    # dotnet ef migrations add "myMigration"
-    # dotnet ef database update
+    # dotnet ef migrations add "myMigration" //build et créer les migrations
+    # dotnet ef database update //créer la base 
 
 > Supprimer les migrations(dossier) tant qu'on n'as pas une version fonctionnelle
+
+On peut utiliser Fluent API ( on écrit dans dbcontext) pour éviter les annotations -> Dans la fonction OnModelCreating
+
+## 4. Utilisation
+
+Double click sur la base -> accès si on a un browser pour sqlite
+
+Link to entties / on peut modifier la requête : 
+
+    using(var context = new ArtistsDbContext()){
+        context.Artists.Where(a=>a.BirthDate>new DateTime(2002,12,12)).OrderByDescending(a=>a.lastname);
+        foreach(var a in artists){
+            Console.WriteLine($"{a.FirstName} {a.LastName} ({a}))
+        }
+    } //dispose
+    context.SaveChanges(); // pour enregistrer
+
+## 5. Séparation de la bibliothèque de classe 
+
+: my EFLIB : biblio de classes
+
+- Project :  
+- App cosole : consomme la biblio de classe 
+
+On se place dans le bdProject ou dans le startupProject
+
+## 6. Propreté 
+
+Pour faire bien : 
+
+DBContext + entity 
+StubContext
+TrucEF : classes
+
+On ajoute un namespace Model : 
+- Couche abstraite : interface IDataManager{
+    getnbArtists
+    getArtists
+    GetArtists by id
+    add 
+    etc... CRUD
+}
+
+Shema : 
+
+ajout de biblio de classe avec Dbdata manager qui implémente Idatamanager  dépend de model et my efLib
+
+public DbDataMANGER ( artis context ){
+    this context = context
+}
+: private readonly artistsDbCOntext context{ get set}
