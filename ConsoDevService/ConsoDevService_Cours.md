@@ -19,7 +19,12 @@ Nous utilisons un API type Rest (Representationnal State Transfer) avec les conv
 - **Layered** : Permettre l'ajout d'intermédiaires (surcouche)
 - **Verbes** : actions sur les ressources 
     - Get : Récupération
+        - By Id doit retourner un élément de manière unique
     - Post : Création 
+        - Récupération du DTO et conversion en entité
+        - Ajout et recup du ajouté 
+        - Retour du resultat reconverti en DTO ( nameofgetbyid), new{Id =1}, championResultDTo)
+        - ne pas tester le code de retour mais le contenu de celui-ci, et si le cast n'est pas null  
     - Put : Mise à jour
     - Delete : Suppresion
 
@@ -50,3 +55,9 @@ IDATAManager datam.ianager
 
 
 > **DTO** : Data Transfer Object, permet de transformer une classe afin d'en faire l'envoi, notamment si l'on ne veut pas stocker tout dans la base de données. 
+
+***A avoir fait***
+
+***Déploiement***
+
+Conteneur avec API puis peut etre avec BDD

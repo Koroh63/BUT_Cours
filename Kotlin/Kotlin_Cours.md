@@ -202,3 +202,129 @@ Les Fonctions infix permettent d'appeler les fonctions comme des opérateurs :
 
 On utilise Dokka qui est comme javadoc mais en mieux 
 
+# Classe et Objets
+
+Définisseurs de visibilité
+- public : par défault
+- private
+- internal
+- protected
+
+Il existe une différentiation entre le constructeur principal( au moment de la définition de la classe) 
+
+    class Person(name: String){
+        private val nameUpper = name.uppercase()
+        init{
+            println("My name is : $nameUpper.")
+        }
+    }
+
+et les constructeurs secondaires : 
+
+    constructor(name: String,age: Int): this(nale){
+        this.age=age
+    }
+
+> L'utilisation uniquement du principale avec des paramètres par défault est plus "Kotlin Spirit"
+
+Afin d'ajouter des visibilités sur les constructeur il faut mettre le mot clé constructor après la visibilités
+
+le mot clé var/val permet de déclarés les paramètres du constructeurs comme attributs (val= getter et var = getter/setter)
+
+    class Person{
+        var name = "John";
+    }
+    john = Person();
+    john.name
+
+Cependant une syntaxe compélte est disponible 
+
+    var speed: Int
+        get() = field*100;
+        set(value){
+            if(value>=0){field=value}
+        }
+
+Classe de données : 
+
+data class Person(var name:String, var age: Int)
+
+- Pas possbile de les mettre en abstract, open, sealed ou inner
+- Le Ctor principal a au moins un paramètre.
+- Les paramètres des Ctor doivent tous être marqués val ou var
+- equals,hashcode toString générée auto
+- La méthode Copy permet de copier l'objet en changeant certains paramètres => Pattern Prototype
+- La méthode component déstructure la classe :
+
+    val (name,age) = john 
+    println($name) // affiche john
+
+# 2. Héritage 
+
+Toutes classes hérites de Any != java.lang.Object
+- open
+Il faut ouvrir les classes à l'héritage 
+On précise si la classe est ouverte à l'héritage : 
+
+    open class Base(arg: String)
+    class Derived(num:Int):Base(num.toString())
+
+Pour les ctor secondiares il faut ultimement appelé le ctor principale de la mère avec super 
+On redefini les méthode avec override si elle son open 
+si override -> open 
+mais si on veut stopper on marque final
+
+pour les prorpiété peuvent être redefini de val en var aussi
+
+- abstract : pas instantiable forcément open , propriétés abstraites :
+
+        abstract class Base{
+            abstract val arg: String
+        }
+
+        class Derived : Base{
+            override val arg: String
+            get()="Something"
+        }
+    
+- sealed : classe abstraite avec ctor privée qui permet d'^tre redérivé dans les limites des classes défini ici : permet d'étudier le pattern et de comparer le type, permet d'avoir une hiérarchie 
+
+        when(type){
+            is Caduque -> dosmth
+            is Persistant -> DOSMTH
+        }
+- inner : permet de définir des classes dans d'autres pour appuyer l'encapsulation
+
+        class Outer{
+            private val bar:Int= 1
+            class Nested {
+                fun foo() = bar
+            }
+        }
+        val demo = Outer().Inner().foo() // demo = 2
+
+# 3. Interfaces
+
+Entités abstraites ne contenant pas d'état mais possibilité de définir des implémentations par défault des méthodes( sans faire appel à des attributs ) mais les propriétés peuvent être mises -> val avec getter implémenter 
+
+    interface Named{
+        val name:String
+    }
+
+    interface FullNamed: Named{
+        val firstName: String
+        val lastName: String
+        override val name: String get()= "$firstName $lastName"
+    }
+    class Person(
+        override val firstName: String
+        override val lastName: String
+    ): FullNamed
+
+mots clé object : défini un singleton
+companion object
+
+4. Surcharche d'opérateurs 
+défini des opérateurs sur les nouveaux types
+
+    
