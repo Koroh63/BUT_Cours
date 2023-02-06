@@ -68,7 +68,7 @@ Il n'y a pas de type "void", mais le singleton Unit. Le type Nothing existe auss
 ## **1. Types**
 - **val** : constante
 - **var** : variable
-    - **const** : top level (#define)
+    - **const** : constante de comilation, doit être top level (#define)
 
     
             const val truc = muche
