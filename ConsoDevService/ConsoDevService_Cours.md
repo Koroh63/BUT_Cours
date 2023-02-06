@@ -5,6 +5,10 @@
 Projet commun avec Marc Cheval
 "Grille notation"
 
+#### 1. **API** 24pts
+#### 1. **Documentation** 16pts
+#### 1. **Bonus**
+
 # API
 **Qu'est ce qu'une API :** Application Programming Interface, Exploiter des ressources distantes 
 > URI : Uniform Ressource Identifier (url + urn)  
@@ -31,10 +35,18 @@ Utilisation des codes de retours Internet :
 - **Niveau 1** : segmentation en ressource
 - **Niveau 2** : utilisation des verbes et des codes de retours : Savoir
 - **Niveau 3** : utilisation des controles hypermedia 
-
+: my EFLIB : biblio de classes
 ## Pour les Tps : 
 - Rider de JetBrains ou Visual Studio (.net 6)
 
 1. Créer le projet
 2. Selectionnier *API Web ASP.net core (C#)
 3. Activer https, docker, controllers et openAPI
+builder .Services.ADDScoped(IDAtaManager, StubData()) <-
+builder .Services.ADDTransient(IDAtaManager, StubData)
+builder .Services.ADDSingleteon(IDAtaManager, StubData)
+
+IDATAManager datam.ianager
+
+
+> **DTO** : Data Transfer Object, permet de transformer une classe afin d'en faire l'envoi, notamment si l'on ne veut pas stocker tout dans la base de données. 
