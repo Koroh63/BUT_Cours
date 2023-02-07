@@ -1,9 +1,10 @@
-# Kotlin
+# **Kotlin**
 
-### Evaluation
+### ***Evaluation***
 Apprentissage de Kotlin en prévision du développement en Android
 
-#  Présentation
+#  **I - Introduction**
+Apprentissage de Kotlin en prévision du développement en Android
 Language à typage statique, intégré à android studio et intellijIDEA, moins verbeux que java.Multi-paradigmes, JVM et pousse aux best-practices
 
 Doc : https://kotlinlang.org/docs/home.html  
@@ -11,7 +12,6 @@ Playground : https://play.kotlinlang.org
 
 Création du projet : New Porject ➜ Kotlin ➜ Créer
 
-# Intro
 
 - Extension des fichiers en .kt
 - Si 1 instruction dans la ligne ➜ pas de **";"** en fin de ligne
@@ -202,8 +202,9 @@ Les Fonctions infix permettent d'appeler les fonctions comme des opérateurs :
 
 On utilise Dokka qui est comme javadoc mais en mieux 
 
-# Classe et Objets
+# **Classe et Objets**
 
+## **1.Base**
 Définisseurs de visibilité
 - public : par défault
 - private
@@ -258,8 +259,8 @@ data class Person(var name:String, var age: Int)
 
     val (name,age) = john 
     println($name) // affiche john
-
-# 2. Héritage 
+---
+## **2. Héritage**
 
 Toutes classes hérites de Any != java.lang.Object
 - open
@@ -302,8 +303,8 @@ pour les prorpiété peuvent être redefini de val en var aussi
             }
         }
         val demo = Outer().Inner().foo() // demo = 2
-
-# 3. Interfaces
+---
+## **3. Interfaces**
 
 Entités abstraites ne contenant pas d'état mais possibilité de définir des implémentations par défault des méthodes( sans faire appel à des attributs ) mais les propriétés peuvent être mises -> val avec getter implémenter 
 
@@ -324,7 +325,43 @@ Entités abstraites ne contenant pas d'état mais possibilité de définir des i
 mots clé object : défini un singleton
 companion object
 
-4. Surcharche d'opérateurs 
+--- 
+## **4. Surcharche d'opérateurs**
 défini des opérateurs sur les nouveaux types
 
-    
+# **III - Les collections** 
+
+Dans les collactions itérables : 
+
+- Collection extends Iterable :
+    - Collection 
+        - List
+            - ArrayList
+            - LinkedList
+        - Set
+            - HashSet
+                - LinkedHashSet
+            - TreeSet
+    - Map
+        - HashMap
+            - LinkedHashMap
+        - TreeMap
+
+Kotlin offre des factory pour créer les collections : listof(), setOf(), mapOf()
+
+    val myList = listOf(1,2,3,4,5)
+    println(myList[2])
+    myList[2] = 42
+
+emptyList(), emptySet() ou emptyMap() pour faire de collections vide
+
+    val strings = listOf() // KO, liste de quoi?
+    val strings : List<String> = listOf()
+    val strings = List<String>()
+
+Quelques exemples : 
+
+
+    val digits (0..9).toList4
+    val squares = digits.map{it*it}
+    val evenSquares = squares.filter'd

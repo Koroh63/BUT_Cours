@@ -50,4 +50,29 @@ Dans une entreprise les différentes activités sont :
 
 Plus le système est haut dans les domaines, plus les données extérieurs sont requises.
 
-Un système intégré : un sytème qui communique de bout en bout de l'entreprise et également avec l'extérieur, il est composé de différents processus, processus accessibles à toute l'entreprise. --shéma--
+Un système intégré : un sytème qui communique de bout en bout de l'entreprise et également avec l'extérieur, il est composé de différents processus, processus accessibles à toute l'entreprise.
+
+
+# La relation Client (CRM : Customer relation management)
+
+*Parfois c'est mieux de garder les bons client que d'en acquérir*
+
+Le CRM permet d'avoir une vue globale du client accessble depuis tout les points d'entrées de l'entreprise
+
+### Points Forts :
+- Augmenter la productivité des ventes pour fidéliser les meilleurs client et/ou les plus rentables
+- Répondeur à fonctions vocale : permet d'amener le client au bon correspondant automatiquement
+- Marketing : publicités/recommandations ciblés et analyse pour savoir si le client est plus ou moins rentable 
+- Vente croisé : faire de la vente alors qu'il est venu pour autre chose
+
+Certains CRM sont plus Analytique pour aider à la décision tandis que d'autres sont plus Opérationnels et gèrent seulement les transactions mais ils les mêmes indivateurs de performances : 
+- Cout/client potentiel
+- Cout/vente
+- Clients réguliers
+- Taux de désabonnement 
+- Taux de cloture des ventes 
+- Valeur à vie du client
+
+# ERP 
+
+Il permet la gestion des connaissances au sein de l'entreprise
