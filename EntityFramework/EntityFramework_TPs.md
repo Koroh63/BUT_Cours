@@ -53,9 +53,9 @@ On peut utiliser Fluent API ( on écrit dans dbcontext) pour éviter les annotat
 
 ## 4. Utilisation
 
-Double click sur la base -> accès si on a un browser pour sqlite
+> Double click sur la base de données .sqlite permet d'accéder à celle-ci si on a un browser pour sqlite.
 
-Link to entties / on peut modifier la requête : 
+Uitilisation de Link to entities : 
 
     using(var context = new ArtistsDbContext()){
         context.Artists.Where(a=>a.BirthDate>new DateTime(2002,12,12)).OrderByDescending(a=>a.lastname);
@@ -64,11 +64,10 @@ Link to entties / on peut modifier la requête :
         }
     } //dispose
     context.SaveChanges(); // pour enregistrer
+> On peut modifier la requête si elle n'est pas assez optimisé
+## 5. Propreté / Séparation de la bibliothèque de classe 
 
-## 5. Séparation de la bibliothèque de classe 
-
-: my EFLIB : biblio de classes
-
+- MyEFLib : stock le DBCOntext et ses Entitys 
 - Project :  
 - App cosole : consomme la biblio de classe 
 

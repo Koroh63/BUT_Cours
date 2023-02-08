@@ -74,4 +74,41 @@ Les fichiers prennent forment en 3 parties :
 
 # Navigation 
 
+## TPs : 
+
+Arbo: 
+- assets 
+- components
+    - props : type
+    - fonction render : notre composant
+    - feuille de style : 
+- navigation
+    - navigation.tsx
+- screens
+    - HomeScreen.tsx
+- App.tsx : main point d'entré
+- app.json : Android ou ios, icon, version
+- package.json : nugets , dependances
+
+
+### les écrans : 
+
+pas de propriétés: on peut utiliser nos composants 
+
+### FlatList : 
+3 propriété principales :
+
+- data 
+- renderItem
+- keyExtractor : avoir un identifiant unique pour chaque item => il faut qu'on lui donne la clé unique de l'item pour chaques 
+
+    export const NOUNOURSLIST
+
+    <Flat>
+
+### nAVIGATION AVEC bottom tab bar
+
+faire imort , créer bottome tab bar , 
+toute naivgation doit se faire dans le navigation container 
+
 # Native features 
