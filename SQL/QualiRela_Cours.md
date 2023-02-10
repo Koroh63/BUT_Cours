@@ -56,6 +56,12 @@ Ensemble des règles pour une bonne conception (Edgar Codd, 1970) avec pour obje
 ### Dépendance Fonctionnelle : 
 Y dépend fonctionnellement de X si on ne peut associer qu'un Y à chaque X
 
+***Trivial*** : X -> X ou XY -> Y 
+
+**Ex5** 
+
+A1 -> A4 ; A2 -> A3 ; A3 -> A2 ; A1,A2 -> A3 ; A1,A2 -> A4 ; A1,A3 -> A2 ; A1,A3 -> A4; A2,A4 -> A3 ; A3,A4 -> A2 ; A1,A2,A3 -> A4 ; A1,A2,A4 ->  ; 
+
 ### **A - 1ère Forme Normale (1FN)** 
 ***Tout attributs contient une valeur atomique*** : 
 - Pas de valeur calculable
@@ -65,5 +71,12 @@ Y dépend fonctionnellement de X si on ne peut associer qu'un Y à chaque X
 - Etre 1FN
 - Clé Primaire défini
 - Tout autre attribut est en DF avec l'ensembe de la clé primaire
+
+### **C - 3ème Forme Normale (3FN)**
+- Etre 2FN
+- Pas de dépendance fonctionnelle entre attributs non-clés
+### **D - 4ème Forme Normale (4FN)**
+- Etre 3FN
+- Les dépendances fonctionnelles ne se font qu'entre des attributs clés et des non-clés
 
 ## NoSQL et MongoDB
