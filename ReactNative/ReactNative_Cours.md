@@ -72,6 +72,9 @@ Les fichiers prennent forment en 3 parties :
 
 # State Management (Redux) 
 
+Etat partagé par les composants et écrans dans le store, il ne sera pas sauvegardé, 
+On utilise donc redux dans react, qui permet d'utiliser le store, il n'y en as qu'un par application
+
 # Navigation 
 
 ## TPs : 
