@@ -15,3 +15,4 @@ Les test ne sont que le resultat de l'automatisation des essais
 
 - ***Test Fonctionnel :*** vérification des cas d'utilisation (fonctionnalités) 
 - ***Test Unitaire :*** tester une unité (classe, groupe de méthode, etc ...), plus particulièrement les méthodes -> 1 classe = 1 fichier de test
+
