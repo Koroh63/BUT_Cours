@@ -77,6 +77,42 @@ A1 -> A4 ; A2 -> A3 ; A3 -> A2 ; A1,A2 -> A3 ; A1,A2 -> A4 ; A1,A3 -> A2 ; A1,A3
 - Pas de dépendance fonctionnelle entre attributs non-clés
 ### **D - 4ème Forme Normale (4FN)**
 - Etre 3FN
-- Les dépendances fonctionnelles ne se font qu'entre des attributs clés et des non-clés
+- Les dépendances fonctionnelles ne se font qu'entre des attributs clés et des non-clés2
 
-## NoSQL et MongoDB
+# NoSQL et MongoDB
+
+Not only SQL => not relationnal
+
+### 1. **Modèle Hierarchique : IMS** 
+Rangement des boites dans des boites avec une grande boite
+### 2. **Language en réseau : Cobol en réseau**
+Language Cobol d'interrogation de données : ancetre du SQL
+Modèle en réseau
+### 3. **Modèle Relationnel par Edgar F. Codd**
+### 4. **Le Big Data**
+Besoins en : 
+- PétaOctets, ExaOctets
+- Données hétérogènes
+- Acces rapide à tout moment
+
+Emergence de nouveaux modèles 
+- 2003 : GFS
+- 2004 : BigTable
+- 2006 : HBase
+- 2007 : Amazon Dynamo
+- 2012 : DynamoDB
+
+## **Les modèles de NoSQL**
+---
+
+### 1. **Orientés Clé-Valeur** 
+AmazonS3, Redis, Riak
+### 2. **Orientés Clé-Document**
+Utilisation de fichier JSON, XML, ...
+### 3. **Orientés Colonne**
+clé et avec des colonnes 
+### 4. **Orientés graphes**
+DOnnées sous forme de noeuds connectés entre eux
+### 5. **Orientés plain-text**
+Index inversé : moteur de recherche
+Des sites web associés à des termes
