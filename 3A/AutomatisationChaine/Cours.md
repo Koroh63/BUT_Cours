@@ -1,10 +1,9 @@
 # **Automatisation de la chaine de production**
 
 
-
 ### Développement et intégration continue
 
-Plusieurs phases : 
+Plusieurs phases de déploiement: 
 
 - plan
 - code
@@ -17,8 +16,6 @@ Plusieurs phases :
 
 
 
-# **Partie 1** : 
+# **Partie 1** : Création des première pipeline 
 
-Création des première pipeline 
-
-toujours avoir .drone.yaml à la racine du repository "
+utilisation du .drone.yaml pour la mise en place de différents jobs dépendant les uns des autres et utilisant des images pour fonctionner
