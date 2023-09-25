@@ -41,3 +41,25 @@ On peut pas avoir les 3 propriétés en même temps
 - Données non-structurées : Fichier video, binaires, images
 - Données dynamiques 
 - Données statiques 
+
+# MapReduce History 
+two go:
+- increase amount of data 
+- decrease the time of process
+
+To do so : 
+- scaling up : adding ressources ( machine, power , memory, storage ... ) -> limited scalability and expensive 
+- scaling out : adding more nodes : cluster -> requires to modifiy application 
+
+Google proposed MapReduce :
+- Key-value 
+- two main operation : main and reduce
+- distributed file system : compute where the data are located
+
+
+
+
+
+# Hadoop Eco-system
+
+# 
