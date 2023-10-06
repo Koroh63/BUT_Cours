@@ -1,0 +1,8 @@
+CREATE TABLE Images(
+    hash string,
+    date date,
+    ip string,
+    hostname string
+);
+
+INSERT INTO Images VALUES('339D025853C7BD7430ACAA28BB3A909149D96562E7854CE1424C0C64A3414DD8',CURRENT_DATE,'192.168.15.22','ciaobello')

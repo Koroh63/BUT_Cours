@@ -192,9 +192,9 @@ def Polonaise(d,res):
         Polonaise(d['fd'],res)
     else:
         return
-print('Polonaise :')
-Polonaise(d5,a)
-print(a)
+# print('Polonaise :')
+# Polonaise(d5,a)
+# print(a)
     
 def PolonaiseInverse(d,res):
     if(ArbreNonVide(d)):
@@ -204,9 +204,9 @@ def PolonaiseInverse(d,res):
     else:
         return
 
-print('PolonaiseInverse : ')
-PolonaiseInverse(d5,b)
-print(b)
+# print('PolonaiseInverse : ')
+# PolonaiseInverse(d5,b)
+# print(b)
     
 def Expression(d,res):
     if(ArbreNonVide(d)):
@@ -234,21 +234,21 @@ def Expression(d,res):
     
 def Eval(d,res):
     tab = []
-    Expression(d,tab)
+    Polonaise(d,tab)
     stack = [] 
-    for ele in expression:
+    for ele in tab:
         
-        # ele is a number
+        
         if ele not in '/*+-':
             stack.append(int(ele))
         
-        # ele is an operator
+        
         else:
-        # getting operands
+       
             right = stack.pop()
         left = stack.pop()
             
-        # performing operation according to operator
+        
         if ele == '+':
             stack.append(left + right)
             
@@ -261,7 +261,156 @@ def Eval(d,res):
         elif ele == '/':
             stack.append(int(left / right))
         
-    # return final answer.
+    
     return stack.pop()
 
-print(Eval(d5,0))
+#print(Eval(d5,0))
+d6={
+    'e':15,
+    'fg':{
+        'e':6,
+        'fg':{
+            'e':3,
+            'fg':{
+                'e':2,
+                'fg':{},
+                'fd':{}
+            },
+            'fd':{
+                'e':4,
+                'fg':{},
+                'fd':{}
+            }
+        },
+        'fd':{
+            'e':7,
+            'fg':{},
+            'fd':{
+                'e':13,
+                'fg':{
+                    'e':9,
+                    'fg':{},
+                    'fd':{}
+                },
+                'fd':{}
+            }
+        }
+    },
+    'fd':{
+        'e':18,
+        'fg':{
+            'e':17,
+            'fg':{},
+            'fd':{}
+        },
+        'fd':{
+            'e':20,
+            'fg':{},
+            'fd':{}
+        }
+    }
+}
+
+def Rechercher(d,x):
+    if(ArbreNonVide(d)):
+        if(d['e']==x):
+            return True
+        elif(Feuille(d)):
+            return False
+        elif(d['e']>x):
+            return Rechercher(d['fg'],x)
+        else : 
+            return Rechercher(d['fd'],x)
+    else:
+        return False
+            
+
+# print(Rechercher(d1,1))
+# print(Rechercher(d2,1))
+# print(Rechercher(d2,6))
+# print(Rechercher(d6,13))
+# print(Rechercher(d6,17))
+# print(Rechercher(d6,40))
+
+def Min(d):
+    if(ArbreNonVide(d)):
+        if(Feuille(d) or d['fg']=={}):
+            return d['e']
+        else:
+            return Min(d['fg']) 
+    else : 
+        return
+
+# print(Min(d1))
+# print(Min(d2))
+# print(Min(d6))
+
+def Max(d):
+    if(ArbreNonVide(d)):
+        if(Feuille(d) or d['fd']=={}):
+            return d['e']
+        else:
+            return Max(d['fd']) 
+    else : 
+        return
+
+# print(Max(d1))
+# print(Max(d2))
+# print(Max(d6))
+
+
+
+# Postfixe(d6)
+# Prefixe(d6)
+# Infixe(d6)
+
+def Afficher(d,res):
+    if(ArbreNonVide(d)):
+        Afficher(d['fg'],res)
+        res.append(d['e'])
+        Afficher(d['fd'],res)
+    else:
+        return
+
+
+def Inserer(d,x):
+    if(ArbreNonVide(d)):
+        if(d['e']>x):
+            return Inserer(d['fg'],x)
+        elif (d['e']<x):
+            return Inserer(d['fd'],x)
+        else : 
+            return
+    else : 
+        d.update({
+            'e': x,
+            'fg': {},
+            'fd': {}
+        })
+# Inserer(d6,10)
+
+    
+L1=[5,1,8,0,9,6,-1,25,11]
+
+# L1.sort()
+
+# for i in L1:
+#     Inserer(d1,i)
+
+tab = []
+# print(d1)
+# print(tab)
+
+def Construire(L):
+    d = {}
+    for i in L:
+        Inserer(d,i)
+    
+    return d
+
+dh = Construire(L1)
+
+
+Afficher(dh,tab)
+
+print(tab)
