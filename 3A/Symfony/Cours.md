@@ -38,6 +38,8 @@ Le conteneur de service va gérer le service
 
 AutoWiring  : Symfony instancie les managers lui-même 
 
+    symfony console debug:container -> liste les services autowiré
+
 Configuration manuelle des paramètres toujours possbile cependant
 
 ## Partie 3 : BDD 
