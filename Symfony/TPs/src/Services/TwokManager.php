@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace App\Services;
 
-use phpDocumentor\Reflection\Types\Null_;
+use App\Entity\Twok;
 
 class TwokManager
 {

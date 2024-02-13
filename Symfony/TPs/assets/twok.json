@@ -1,0 +1,62 @@
+[
+  {
+    "id": 42184,
+    "author": "Yvan Durev",
+    "content": "J'ai vu le plus beau coucher de soleil à la plage ! #béni #amoureuxducoucherdesoleil",
+    "created_at": "2023-10-18T09:31:27"
+  },
+  {
+    "id": 10727,
+    "author": "Claire Voyance",
+    "content": "Je n'arrive pas à croire que j'ai enfin terminé mon premier marathon ! #marathon #travaildur",
+    "created_at": "2023-04-26T18:38:40"
+  },
+  {
+    "id": 51869,
+    "author": "Justin Ptipeu",
+    "content": "Lire un bon livre, c'est comme entreprendre un voyage... #ratdebibliothèque #lecture",
+    "created_at": "2023-11-11T18:22:50"
+  },
+  {
+    "id": 29866,
+    "author": "Jean Bonboeur",
+    "content": "Rien ne vaut une bonne tasse de café par un jour de pluie. #café #jourdepluie",
+    "created_at": "2023-05-18T19:14:26"
+  },
+  {
+    "id": 38703,
+    "author": "Alex Térieur",
+    "content": "Je travaille sur ma nouvelle peinture, je me sens inspiré ! #art #créativité",
+    "created_at": "2023-07-13T01:53:21"
+  },
+  {
+    "id": 72106,
+    "author": "Igor Gonzola",
+    "content": "Explorer la ville et trouver des trésors cachés. #voyage #aventure",
+    "created_at": "2023-01-31T12:24:30"
+  },
+  {
+    "id": 80606,
+    "author": "Agathe Afeeling",
+    "content": "La soirée jeux en famille est toujours tellement amusante ! #tempsenfamille #jeuxdesociété",
+    "created_at": "2023-09-22T13:27:22"
+  },
+  {
+    "id": 54252,
+    "author": "Samira Bien",
+    "content": "J'ai cuisiné une nouvelle recette ce soir et c'était délicieux ! #cuisine #gourmand",
+    "created_at": "2023-10-08T09:07:24"
+  },
+  {
+    "id": 39343,
+    "author": "Alfonse Danlta",
+    "content": "La nouvelle saison de ma série préférée est sortie ! Temps de binge-watching. #sérieTV #bingewatching",
+    "created_at": "2023-12-25T16:36:50"
+  },
+  {
+    "id": 37497,
+    "author": "Jean Peuplu",
+    "content": "Je réfléchis aux petites joies de la vie. #gratitude #bonheur",
+    "created_at": "2023-07-20T06:04:05"
+  }
+]
