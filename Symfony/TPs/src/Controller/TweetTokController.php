@@ -11,11 +11,19 @@ use Symfony\Component\Routing\Attribute\Route;
 class TweetTokController extends AbstractController
 {
     #[Route('/home', name: 'app_tweet_tok')]
-    public function index(): Response
+    public function index(TwokManager $mgr): Response
     {
+        $twoks = $mgr->getTwoks();
         return $this->render('tweet_tok/index.html.twig', [
-            'message' => "Bienvenue dans le home ! C'est le home ... Voilà Voilà ..."
+            'message' => "Bienvenue dans le home ! C'est le home ... Voilà Voilà ...",
+            'twoks' => $twoks
         ]);
+    }
+
+    #[Route('/import')]
+    public function import(TwokManager $mgr): Response
+    {
+        $mgr->importTwoks();
     }
 
     #[Route('/home/{id}',requirements: ['page' => '\d+'])]
@@ -36,7 +44,7 @@ class TweetTokController extends AbstractController
         ]);
     }
 
-    #[Route('/home/{twok}', methods: ['PUT'],priority: 2)]
+    #[Route('/home/{twok}', methods: ['POST'],priority: 2)]
     public function addTwok(Twok $twok,TwokManager $mgr) : Response
     {
         $mgr->addTwok($twok);

@@ -26,3 +26,4 @@ services:
     App\Services\TwokManager:
         arguments:
             $path: '../assets/twok.json'
+            $mgr: '@doctrine.orm.entity_manager'

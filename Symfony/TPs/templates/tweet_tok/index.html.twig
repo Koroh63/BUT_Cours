@@ -11,6 +11,14 @@
 <div class="example-wrapper">
     <h1>{{ message }}</h1>
 
+    {% if  twoks|length > 0 %}
+        <ul>
+            {% for twok in twoks %}
+                {% include 'tweet_tok/twok.detail.html.twig' with {'twok': twok} %}
+            {% endfor %}
+        </ul>
+    {% endif %}
+
 
 </div>
 {% endblock %}

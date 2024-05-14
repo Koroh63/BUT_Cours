@@ -84,10 +84,11 @@ Génération des URLs possible et de la gestion des paramètres aussi
 
 ## Services et Injections de dépendances 
 
-Objet PHP effectuant des tâches spécifiques 
+Objet PHP effectuant des tâches spécifiques /src
 Le conteneur de service va gérer le service 
 
-AutoWiring  : Symfony instancie les managers lui-même 
+Utilisation du service en injection de dépendances:
+    -> AutoWiring  : Symfony instancie les managers lui-même en utilisant la configuration dans services.yaml
 
     symfony console debug:container -> liste les services autowiré
 
@@ -99,14 +100,17 @@ Utilisation de l'ORM **Doctrine** ( installation via composer ) et Liaison avec 
 
 Afin de générer la classe correspondant aux tables : 
 
-    make entity
+    symfony console make:entity
 
 Et ensuite création de la table par migration :
 
     symfony console make:migration -> génère le fichier php avec les infos 
-    symfony console doctrine:migration:migrate - applique les changements 
+    symfony console doctrine:migration:migrate -> applique les changements 
 
 Dans le controller, faire des new et utiliser la commande persist pour enregistrer en BDD cet objet et utilise flush pour commit le tout 
+
+    $entityManager->persist($produit);
+    $entityManager->flush()
 
 A la création de l'entité, le repository lié est créé aussi afin de gérer les collections de ces objets : 
 - find ($id)
@@ -121,6 +125,9 @@ Pour des requêtes plus complexes : créer des méthodes personnalisées.
 Générateur de code HTML, CSS, etc
 
     {{ ... }} : affichage contenu de variable ou résulta d'une expréssion 
+        - path pour rediriger vers une route du controller
+        - asset pour générer l'url des assets statique
+        - variable apps
     {% ... %} : logique (condition ou boucle )
     {# ... #} : commentaires 
 

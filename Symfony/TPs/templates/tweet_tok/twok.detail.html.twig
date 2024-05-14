@@ -1,0 +1,14 @@
+{% block title %} Twok Details {% endblock %}
+
+{% block body %}
+    <li>
+        {% if "now"|date('Y-m-d')in  twok.created_at %}
+            <h3 style="color: #5B21B6"> New Twok ! </h3>
+
+
+        {% endif %}
+        <h3> {{ twok.content|summarize(100) }}</h3>
+        <p> By {{ twok.author }} at {{ twok.created_at }}</p>
+    </li>
+{% endblock %}
+
