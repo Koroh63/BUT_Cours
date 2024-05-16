@@ -5,11 +5,11 @@ namespace App\Entity;
 use App\Repository\TwokRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\UX\Turbo\Attribute\Broadcast;
-use ApiPlatform\Metadata\ApiRessource;
+use ApiPlatform\Metadata\ApiResource;
 
-#[ApiResource]
 #[ORM\Entity(repositoryClass: TwokRepository::class)]
 #[Broadcast]
+#[ApiResource]
 class Twok
 {
     public function __construct(int $id,string $auteur,string $message, string $date)
