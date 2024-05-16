@@ -32,7 +32,7 @@ class Twok
     private ?string $message = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $date = null;
+    private ?string $date = null; 
 
     public function getId(): ?int
     {
