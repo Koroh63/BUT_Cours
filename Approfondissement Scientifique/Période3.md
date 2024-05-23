@@ -17,5 +17,5 @@
 ### *Q4 : Quels sont les différents types de cycles de vie d'un projet ?*
 - *Cascade, Spirale, Scrum/Agile et Cycle en V*
 
-### *Q4 : Quelles sont les 4 étapes d'un projet ?*
+### *Q5 : Quelles sont les 4 étapes d'un projet ?*
 - *Recueil du besoin, Conception/Définir, Développement/Réaliser et Livraison*
