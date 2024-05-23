@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { Book } from './book';
 import { BOOK } from './book.mock';
 import { NgFor } from '@angular/common';
@@ -8,7 +9,7 @@ import { JsonpClientBackend } from '@angular/common/http';
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor,DatePipe],
   templateUrl: './book.component.html',
   styleUrl: './book.component.css'
 })

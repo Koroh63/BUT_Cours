@@ -4,5 +4,7 @@
         <span>{{book.title}}</span>
         <span>  by  </span>
         <span>{{book.author}}</span>
+        <span> at </span>
+        <span>{{book.publicationDate | date:'EEEE dd MMMM yyyy' }}</span>
     </li>
 </ul>

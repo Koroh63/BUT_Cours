@@ -6,11 +6,20 @@ import { BOOK } from './book/book.mock';
   providedIn: 'root'
 })
 export class BookService {
-
+  books : Book[] = BOOK;
   constructor() {}
 
   getBooks() : Book[]{
     return BOOK;
   }
+
+  addBooks(book:Book): boolean{
+    try{
+      this.books.push(book);
+    }catch{
+      return false
+    }
+    return true
+  } 
 
 }
