@@ -5,13 +5,33 @@ import numpy as np
 def myMean(vector):
     return sum(vector)/len(vector)
 
-def myMode(vector):
-    return np.argmax(np.bincount(vector))
+def tabToList(values,effectif):
+    if(len(values)!=len(effectif)):
+        return
+    vector = []
+    for i in range(len(values)):
+        for j in range(effectif[i]):
+            vector.append(values[i])
+    return vector
+
+def myMode(values):
+    modes = []
+    for value in values:
+        if modes==[] or values.count(value)>values.count(modes[0]):
+            modes=[value]
+        else:
+            if values.count(value)==values.count(modes[0]) and not value in modes:
+                modes.append(value)
+    return modes
 
 def myMedian(vector):
-    if(len(vector%2==1)):
+    if(len(vector)%2==1):
         return sorted(vector)[(len(vector)//2)+1]
-    return (sorted(vector)[len(vector)/2]+sorted(vector)[(len(vector)/2)+1])/2
+    return (sorted(vector)[len(vector)//2]+sorted(vector)[(len(vector)//2)+1])/2
+   
+def myMeanDeviation(vector):
+    mean = myMean(vector)
+    return(myMean([abs(x-mean) for x in vector]))
 
 def myDefDomain(vector):
     return max(vector)-min(vector)
@@ -32,11 +52,25 @@ vector = random.randint(0,10,size=1000)
 # print(myStandartDeviation(vector=vector))
 # print(myVariance(vector=vector))
 
-B = [[5,10],[8,12],[9,48],[10,23],[11,24],[12,48],[13,9],[14,7],[16,13]]
+# EXO 2 
+print("--- EXO 2 ---")
+yB = [10,12,48,23,24,48,9,7,13]
+xB = [5,8,9,10,11,12,13,14,16]
+print("Effectif :   "+ str(yB))
+print("Valeur :     "+ str(xB))
 
-x_values = [sublist[0] for sublist in B]
-y_values = [sublist[1] for sublist in B]
+# plt.bar(xB,yB)
+# plt.show()
 
+vector = tabToList(xB,yB)
+print(' - Tendance Centrale :')
+print("Mode :       "+str(myMode(vector)))
+print("Median :     "+str(myMedian(vector)))
+print("Mean :       "+str(myMean(vector)))
+print(' - Dispersion : ')
+print('DefDomain :  '+str(myDefDomain(vector)))
+print('MeanDeviation:'+str(myMeanDeviation(vector)))
+print('Variance:    '+str(myVariance(vector)))
 # Exercice 3
 QI = np.random.normal(100, 225**0.5, 100000)
 
