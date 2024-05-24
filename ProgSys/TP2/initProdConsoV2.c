@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <pthread.h>
 #include <sys/sem.h>
+#include <semaphore.h>
 
 #define TAILLE 5 //tampon circulaire de taille 5
 
@@ -15,8 +16,11 @@ struct tampon {
   char zone[TAILLE];
   unsigned int lecture;
   unsigned int ecriture;
-};
+  sem_t r;
+  sem_t w;
+  sem_t mutex;
 
+};
 
 
 int main ()
@@ -37,8 +41,18 @@ int main ()
   t = (struct tampon*)  shmat (segment_id, 0, 0);
 
   /* Init valeurs tampon */
-  t->lecture=0;
-  t->ecriture=0;
+  if (sem_init(&(t->r),1,0)) {
+    perror("erreur création semaphore lecture");
+    exit(errno);
+  }
+  if (sem_init(&(t->w),1,TAILLE)) {
+    perror("erreur création semaphore lecture");
+    exit(errno);
+  }
+  if (sem_init(&(t->mutex),1,1)) {
+    perror("erreur création semaphore lecture");
+    exit(errno);
+  }
 
   printf("le SHM n° %d a été créé. Vous pouvez maintenant jouer avec des producteurs et consommateurs\n",segment_id);
 
