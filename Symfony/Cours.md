@@ -157,3 +157,59 @@ Inclusion et héritages des templates Twig
             {{ personne.name }}
         {% endif %}
     {% endfor %}
+
+
+# Sécurité 
+
+### Man in the middle (ARP Spoofing)
+Interception et alteration des communications entre 2 tiers 
+
+#### Prévention 
+- Chiffrement : HTTPS/TLS pour sécuriser le transit
+- Certificats : vérifier et éviter les non-fiables 
+    -> Configurer le Virtual Host ( apache ou nginx au niveau du serveur)
+    -> Activation du security-bundle , redirection du http vers https ou dans apache directement 
+
+### Cross-Site-Scripting
+Injection de code dans les pages de vues
+
+#### Prévention 
+- Echappement de données 
+    ->symfony/html-sanatize 
+- Politique de sécurité : implémenter des CSP pour limiter les sources de XSS
+
+### Inclusion de Fichier Locaux / à Distance
+Accès non-autorisés à des fichiers sensibles 
+
+#### Prévention
+- Validation d'entrée : restreindre les chemins 
+- Désactivation des inclusions dynamiques 
+- Désactiver allow_url_include & allow_url_fopen
+
+### Injection SQL
+
+#### Prévention : 
+- Echappement des entrées
+- Requêtes préparées 
+- ORM sécurisé ( Doctrine )
+- Gestion des erreurs 
+
+### Cross-Site-Forged-Request
+
+#### Prévention 
+- Tokens anti-CSRF 
+- Attributs SameSite dans les cookies 
+- En-tête Referer pour domaines autorisés 
+
+### Problèmes d'authorisations sur le site 
+
+#### Prévention 
+
+Contrôle d'accès strict basé sur les rôles RBAC
+Sessions sécurisées et gestion robuste des identifiants
+Test de pénétration
+
+
+## Formulaires 
+
+composer require symfony/form
