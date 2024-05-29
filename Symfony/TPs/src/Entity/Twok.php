@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\UX\Turbo\Attribute\Broadcast;
 use ApiPlatform\Metadata\ApiRessource;
 
-#[ApiResource]
+
 #[ORM\Entity(repositoryClass: TwokRepository::class)]
 #[Broadcast]
 class Twok

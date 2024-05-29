@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookService } from '../book.service';
 import { Book } from '../book/book';
@@ -18,11 +18,11 @@ import { Book } from '../book/book';
 export class BookFormComponent {
 
   constructor(private bookService : BookService){}
-  // bookForm : BookForm
-
-  title = new FormControl('')
-  author = new FormControl('')
-  publicationDate = new FormControl('')
+    bookForm =new FormGroup({
+      title: new FormControl(''),
+      author: new FormControl(''),
+      publicationDate: new FormControl('')
+    });
 
   @Output() messageEmitter = new EventEmitter<Book>();
 
@@ -33,6 +33,7 @@ export class BookFormComponent {
       console.log()
     }else{
       // this.messageEmitter.emit({})
+      // print(this.bookForm.title)
     }
 
   }

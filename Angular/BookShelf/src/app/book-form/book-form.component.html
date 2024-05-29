@@ -1,6 +1,12 @@
-<label for="name">Title: </label>
-<input id="name" type="text" [formControl]="title">
-<label for="name">Author: </label>
-<input id="name" type="text" [formControl]="author">
-<label for="name">Publication Date: </label>
-<input id="name" type="text" [formControl]="publicationDate">
+<div formGroupName="bookForm" (ngSubmit)="submitBook">
+    <label for="name">Title: </label>
+    <!-- <input id="name" type="text" [formControl]="title"> -->
+    
+    <label for="author">Author: </label>
+    <!-- <input id="author" type="text" [formControl]="author"> -->
+    
+    <label for="publicationDate">Publication Date: </label>
+    <!-- <input id="publicationDate" type="date" [formControl]="publicationDate"> -->
+    
+    <button type="button" (click)="submitBook()">Submit</button>
+</div>

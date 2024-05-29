@@ -1,2 +1,10 @@
 <!-- <app-book-form (messageEvent)="newBook($event)"></app-book-form> -->
-<app-book></app-book>
+<h1>BookShelf</h1>
+<nav>
+    <ul>
+        <li><a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page">Home Page</a></li>
+        <li><a routerLink="/Book" routerLinkActive="active" ariaCurrentWhenActive="page">Book List</a></li  >
+        <li><a routerLink="/Form" routerLinkActive="active" ariaCurrentWhenActive="page">Add Book</a></li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
