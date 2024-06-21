@@ -35,3 +35,8 @@ Créer une entreprise :
 - TD2 : stratégie externe 
 - TD3 : stratégie interne 
 
+# Partie 2 : 
+
+Oral
+
+J'ai appris de s

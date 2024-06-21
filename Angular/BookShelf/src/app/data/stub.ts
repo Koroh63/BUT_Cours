@@ -1,6 +1,5 @@
-import { Book } from "./book";
-
-export let BOOK : Book[] = [
+import { Book } from "../model/book.model"
+export var bookStub: Book[] = [ 
     {id: 1,title : 'Pirate des caraibes mageule',author : 'Jeff Eps',publicationDate : new Date('2024-02-12')},
     {id: 2,title : 'Cherub',author : 'Dorian Odin',publicationDate : new Date('2024-03-12')},
     {id: 3,title : '2 lieux sous les mers',author : 'Rémi Arnal',publicationDate : new Date('2024-04-12')},

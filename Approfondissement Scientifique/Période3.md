@@ -19,3 +19,9 @@
 
 ### *Q5 : Quelles sont les 4 étapes d'un projet ?*
 - *Recueil du besoin, Conception/Définir, Développement/Réaliser et Livraison*
+
+## Aide à la décision & Recherche Opérationnelle 
+
+
+
+

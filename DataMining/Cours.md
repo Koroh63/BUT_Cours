@@ -31,3 +31,14 @@ Les critères de dispersion : valeurs représentant l'homogénéité des valeurs
 - Écart Type : 
 
 L'écart Type est plus utilisé car sensibilité en 
+
+## Apprentissage supervisé 
+
+Types de tâches : 
+- clustering 
+    - par densité 
+    - par herarchie 
+    - par des protoype : HCA 
+    - sur spectral
+    - basé sur la distribution
+- détection d'anomalie
