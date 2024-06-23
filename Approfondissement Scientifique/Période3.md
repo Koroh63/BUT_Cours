@@ -1,5 +1,7 @@
 # Approfondissement Scientifique P3 
 
+## Intelligence Economique 
+
 ### *Q1 : Quelle est la raison d'être de l'intelligence économique* ? 
 - *Anticiper les menances économiques sur le pays ou l'entreprise, c'est une guerre économique.*
 
@@ -10,6 +12,7 @@
 ####  - Le marketing  
 - *Le marketing*
 
+## Delivery
 
 ### *Q3 : Qu'est ce que la contingence ?* 
 - *C'est le délais rajouter sur les delivery afin d'assurer les délais en cas d'imprévus/difficultés*
@@ -20,36 +23,45 @@
 ### *Q5 : Quelles sont les 4 étapes d'un projet ?*
 - *Recueil du besoin, Conception/Définir, Développement/Réaliser et Livraison*
 
+## Test en IT 
 
-## Conférence 3 : Test dans l'IT
-
-L'objectif du développeur est de récupérer et respecter le besoin focntionnel avant tout. Il peut utiliser : 
+Pour représenter le besoin fonctionnel : 
+- User Story
+- Cahier des charges 
 - User Stories
 - Cahier de charges 
 - Spécification
 - Maquettes 
 - Dossier de conception
 
-Après avoir Développer : 
 
-1. Code Review 
-2. Test Fonctionnel 
-3. CI/CD 
-4. Test de Performance 
-5. Test Unitaire
-6. Analyse de Code ( Sonar )
-7. Test d'intégration 
-8. Test de Non-régressions
+Avant chaque MR : 
+- Code Review 
+- Test Unitaires
+    A chaque MR, Pour faciliter le Developpement avant tout et ne doit pas forcément avoir une couverture parfaite.
+- Tests Fonctionnels
+- CI/CD
+- Test de Performance 
+- Analyse de code
+- Test Fonctionnel
+- Non-Régression
 
-UT < Intégration < Test de Bout en Bout
+Les principaux tests :
+- Unitaires : Gros volume, moins faible et moins couteux,
+- Intégration : Tout Moyen
+- Bout en Bout : Petit Volume, très fiable mais très couteux
 
-#### UT : 
-- à chaque Merge Request
-- Mocking des interaction
-- par couverture 
-
-#### End-To-End 
-
-Généralement on utilise plusieurs environements : 
+Il faut alors Différencier les environments :
 Local   -> Intégration -> Prod  
         -> Séparation par équipe parfois
+
+Test de bout en bout WEB : 
+- Playright
+- Gherkin
+
+
+## Aide à la décision & Recherche Opérationnelle 
+
+
+
+

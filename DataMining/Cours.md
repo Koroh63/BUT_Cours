@@ -49,3 +49,13 @@ Utilisation de techniques univariées, bivariées 2 à 2
 
 - Extraction de caractéristiques 
 s
+## Apprentissage supervisé 
+
+Types de tâches : 
+- clustering 
+    - par densité 
+    - par herarchie 
+    - par des protoype : HCA 
+    - sur spectral
+    - basé sur la distribution
+- détection d'anomalie

@@ -7,6 +7,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
+use Doctrine\ORM\EntityManager;
 
 class TwokManager
 {
@@ -19,24 +20,26 @@ class TwokManager
 
     public function getTwoks() : mixed
     {
-        $jsonString = file_get_contents($this->path);
-        return json_decode($jsonString, true);
+        return $this->mgr->getRepository(Twok::class)->findAll();
+        
     }
 
-    public function importTwoks(): mixed
-    {
+    // public function importTwoks(): void
+    // {
+    //     $jsonString = file_get_contents($this->path);
+    //     $jsonData = json_decode($jsonString, true);
+    //     $encoders = [new XmlEncoder(), new JsonEncoder()];
+    //     $normalizers = [new ObjectNormalizer()];
+    //     $serializer = new Serial/ContainerVoizer($normalizers, $encoders);
 
-        $encoders = [new XmlEncoder(), new JsonEncoder()];
-        $normalizers = [new ObjectNormalizer()];
-        $serializer = new Serializer($normalizers, $encoders);
-
-        $listTwoks = $this->getTwoks();
-        foreach ($listTwoks as $twok){
-            $twokObject = $serializer->deserialize($jsonData,Twok::class,'json');
-            $this->mgr->persist($twokObject);
-            $this->mgr->flush();
-        }
-    }
+    //     $listTwoks = $this->getTwoks();
+    //     foreach ($listTwoks as $twok){
+    //         $twokObject = $serializer->deserialize($jsonData,Twok::class,'json');
+    //         $this->mgr->persist($twokObject);
+    //         $this->mgr->flush();
+    //     }
+    //     return;
+    // }
 
     public function getTwokById(int $id) : ?Twok{
         $jsonString = file_get_contents($this->path);
@@ -52,10 +55,8 @@ class TwokManager
     }
 
     public function addTwok(Twok $twok): bool{
-        $jsonString = file_get_contents($this->path);
-        $jsonData = json_decode($jsonString, true);
-        $jsonString = json_encode($jsonData,$twok);
-        file_put_contents($this->path, $jsonString);
+        $this->mgr->persist($twok);
+        $this->mgr->flush();
         return true;
     }
 

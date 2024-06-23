@@ -1,0 +1,18 @@
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <label for="id">ID: </label>
+    <input id="id" type="number" formControlName="id">
+    
+    <label for="title">Title: </label>
+    <input id="title" type="text" formControlName="title">
+  
+    <label for="author">Author: </label>
+    <input id="author" type="text" formControlName="author">
+  
+    <label for="publicationDate">Publication Date: </label>
+    <input id="publicationDate" type="datetime-local" formControlName="publicationDate">
+  
+    <p>Complete the form to enable the button.</p>
+    <button type="submit" [disabled]="!bookForm.valid">Submit</button>
+  </form>
+
+  
