@@ -19,3 +19,37 @@
 
 ### *Q5 : Quelles sont les 4 étapes d'un projet ?*
 - *Recueil du besoin, Conception/Définir, Développement/Réaliser et Livraison*
+
+
+## Conférence 3 : Test dans l'IT
+
+L'objectif du développeur est de récupérer et respecter le besoin focntionnel avant tout. Il peut utiliser : 
+- User Stories
+- Cahier de charges 
+- Spécification
+- Maquettes 
+- Dossier de conception
+
+Après avoir Développer : 
+
+1. Code Review 
+2. Test Fonctionnel 
+3. CI/CD 
+4. Test de Performance 
+5. Test Unitaire
+6. Analyse de Code ( Sonar )
+7. Test d'intégration 
+8. Test de Non-régressions
+
+UT < Intégration < Test de Bout en Bout
+
+#### UT : 
+- à chaque Merge Request
+- Mocking des interaction
+- par couverture 
+
+#### End-To-End 
+
+Généralement on utilise plusieurs environements : 
+Local   -> Intégration -> Prod  
+        -> Séparation par équipe parfois

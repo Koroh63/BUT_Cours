@@ -31,3 +31,21 @@ Les critères de dispersion : valeurs représentant l'homogénéité des valeurs
 - Écart Type : 
 
 L'écart Type est plus utilisé car sensibilité en 
+
+## Bivariés : 2 variables
+
+Exemple : taille/poids, etc ...
+
+Analyse des coorélation ( régression ) pour utiliser dans un modèle d'apprentissage
+
+## Traitement des données multi-variées 
+
+Utilisation de techniques univariées, bivariées 2 à 2
+
+- Sélection de caractéristiques : 
+    - Pertinence ? -> mesure de pertinence 
+    - Sous ensemble optimal ? -> algorithme ( enlève les caractéristiques -> si critère d'éval inférieur à borne -> retour étape 1 -> sinon memorisation des sous-ensembles )
+    - Critère d'optimisation -> critère d'arrêt de l'algorithme 
+
+- Extraction de caractéristiques 
+s
