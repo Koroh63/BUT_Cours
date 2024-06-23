@@ -1,5 +1,7 @@
 # Approfondissement Scientifique P3 
 
+## Intelligence Economique 
+
 ### *Q1 : Quelle est la raison d'être de l'intelligence économique* ? 
 - *Anticiper les menances économiques sur le pays ou l'entreprise, c'est une guerre économique.*
 
@@ -10,6 +12,7 @@
 ####  - Le marketing  
 - *Le marketing*
 
+## Delivery
 
 ### *Q3 : Qu'est ce que la contingence ?* 
 - *C'est le délais rajouter sur les delivery afin d'assurer les délais en cas d'imprévus/difficultés*
@@ -19,6 +22,33 @@
 
 ### *Q5 : Quelles sont les 4 étapes d'un projet ?*
 - *Recueil du besoin, Conception/Définir, Développement/Réaliser et Livraison*
+
+## Test en IT 
+
+Pour représenter le besoin : 
+- User Story
+- Cahier des charges 
+
+Avant chaque MR : 
+- Code Review 
+- Test Unitaires
+    A chaque MR, Pour faciliter le Developpement avant tout et ne doit pas forcément avoir une couverture parfaite.
+- Tests Fonctionnels
+- CI/CD
+- Test de Performance 
+
+Les principaux tests :
+- Unitaires : Gros volume, moins faible et moins couteux,
+- Intégration : Tout Moyen
+- Bout en Bout : Petit Volume, très fiable mais très couteux
+
+Il faut alors Différencier les environments :
+Local -> (TEST) -> Collaboratif -> Production 
+
+Test de bout en bout WEB : 
+- Playright
+- Gherkin
+
 
 ## Aide à la décision & Recherche Opérationnelle 
 
